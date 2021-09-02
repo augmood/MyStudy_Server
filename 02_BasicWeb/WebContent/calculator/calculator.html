@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>계산기</title>
+</head>
+<body>
+	<form action="/02_BasicWeb/cal" method="get">
+		<input type="text" name="first_num">
+		<select name="operator">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="x">*</option>
+			<option value="/">/</option>
+		</select>
+		<input type="text" name="second_num"><br>
+		<input type="submit" value="결과보기" onclick="return calFunc();">
+		<input type="reset" value="취소">
+	</form>
+	<!-- <script>
+		function calFunc() {
+		var inputTags = document.getElementsByTagName("input");
+			var num1 = Number(inputTags[0].value);
+			var num2 = Number(inputTags[1].value);
+			var result = num1 + num2;
+			document.write(result);
+			return false;
+		}
+	 </script> -->
+</body>
+</html>

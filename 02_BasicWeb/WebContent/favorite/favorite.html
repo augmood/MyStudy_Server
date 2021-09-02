@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>favorite</title>
+</head>
+<body>
+	<h2> 개인취향 테스트 (get) </h2>
+		당신의 취향을 테스트 합니다 <br>
+		데이터 입력 후 확인 버튼을 누르세요 <br>
+		
+	<form action="/02_BasicWeb/favorite" method="get">
+	이름은? : <input type = "text" name="pname">
+	<br><br>
+	좋아하는 색깔은? : 
+	파란색<input type = "radio" id="color" name="color" value="blue">
+	빨간색<input type = "radio" id="color" name="color" value="red">
+	초록색<input type = "radio" id="color" name="color" value="green">
+	<br><br>
+	좋아하는 선수는? : 
+	<select name="player">
+	<option value="sjkim">김수지</option>
+	<option value="japark">박정아</option>
+	<option value="yjhwang">황연주</option>
+	<option value="hjyang">양효진</option>
+	</select>
+	<br><br>
+	좋아하는 음식은? (모두 고르세요) : 
+	<label>짜장면<input type = "checkbox" name="food" value="zzajang"></label>
+	<label>짬뽕<input type = "checkbox" name="food" value="zzam"></label>
+	<label>탕수육<input type = "checkbox" name="food" value="tang"></label>
+	<label>팔보채<input type = "checkbox" name="food" value="pal"></label>
+	<br><br>
+	<input type = "submit" value="전송">
+	<input type = "reset" value="취소">
+	</form>
+</body>
+</html>

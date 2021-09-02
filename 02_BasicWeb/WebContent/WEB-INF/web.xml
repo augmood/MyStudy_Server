@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>02_BasicWeb</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <!-- servlet 별칭 -->
+  <!-- <servlet>
+  	<servlet-name>Calculator</servlet-name>
+  	<servlet-class>calculator.CalServlet</servlet-class>
+  </servlet>
+  servlet url 매핑
+  <servlet-mapping>
+  <servlet-name>Calculator</servlet-name>
+  <url-pattern>/cal</url-pattern>
+  </servlet-mapping>
+  
+   servlet 별칭
+  <servlet>
+  	<servlet-name>Check</servlet-name>
+  <servlet-class>checkbox.CheckBoxServlet</servlet-class>
+  </servlet>
+  servlet url 매핑
+  <servlet-mapping>
+    <servlet-name>Check</servlet-name>
+  <url-pattern>/check</url-pattern>
+  </servlet-mapping>
+  
+     servlet 별칭
+  <servlet>
+  	<servlet-name>Radio</servlet-name>
+  <servlet-class>radio.RadioServlet</servlet-class>
+  </servlet>
+  servlet url 매핑
+  <servlet-mapping>
+    <servlet-name>Radio</servlet-name>
+  <url-pattern>/radio</url-pattern>
+  </servlet-mapping>
+  
+       servlet 별칭
+  <servlet>
+  	<servlet-name>Favorite</servlet-name>
+  <servlet-class>favorite.FavoriteServlet</servlet-class>
+  </servlet>
+  servlet url 매핑
+  <servlet-mapping>
+    <servlet-name>Favorite</servlet-name>
+  <url-pattern>/favorite</url-pattern>
+  </servlet-mapping> -->
+ 
+ 
+</web-app>
+
