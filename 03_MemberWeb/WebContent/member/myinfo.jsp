@@ -17,12 +17,11 @@
 	ID : <input type="text" name="user-id" value="<%=student.getStudentId() %>" readonly><br>
 	PW : <input type="password" name="user-pw" value="<%=student.getStudentPw() %>"> <br>
 	이름 : <input type="text" name="user-name" value="<%=student.getStudentName() %>" readonly> <br>
-	성별 : <input type="text" name="user-gender"<%=student.getStudentGender() %>" readonly> <br>
-	나이 : <input type="text" name="user-age"<%=student.getStudentAge() %>" readonly> <br>
-	이메일 : <input type="text" name="user-email"<%=student.getStudentEmail() %>"> <br>
-	연락처 : <input type="text" name="user-phone"<%=student.getStudentPhone() %>"> <br>
-	주소 : <input type="text" name="user-address"<%=student.getStudentAddress() %>"> <br>
-	취미 : <input type="text" name="user-hobby"<%=student.getStudentHobby() %>"> <br>
+	성별 : <%= student.getStudentGender() %> <br>
+	이메일 : <input type="text" name="user-email" value="<%= student.getStudentEmail() %>"> <br>
+	폰번호 : <input type="text" name="user-phone" value="<%= student.getStudentPhone() %>"> <br>
+	주소 : <input type="text" name="user-address" value="<%= student.getStudentAddress() %>"> <br>
+	취미 : <input type="text" name="user-hobby" value="<%= student.getStudentHobby() %>"> <br>
 	<input type="submit" value="수정">
 	<input type="reset" value="취소">
 	</fieldset>

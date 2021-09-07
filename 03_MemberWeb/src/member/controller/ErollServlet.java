@@ -26,7 +26,7 @@ public class ErollServlet extends HttpServlet{
 		String userGender = request.getParameter("gender");
 		int userAge = Integer.parseInt(request.getParameter("user-age"));
 		String userEmail = request.getParameter("user-email");
-		String userPhone = request.getParameter("use-phone");
+		String userPhone = request.getParameter("user-phone");
 		String userAddress = request.getParameter("user-address");
 		String userHobby = request.getParameter("user-hoddy");
 		

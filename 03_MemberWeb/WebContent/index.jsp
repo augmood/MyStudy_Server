@@ -33,7 +33,7 @@
 	</form> 아랫줄이랑 같은 내용임  ? => 키 값이 시작된다. --%>
 	<!-- localhost:1989/member/myinfo?student-id=ahn1234 (주소창에 이렇게 뜬다) -->
 	<a href="/member/myinfo?studentId=<%= studentId %>">My info</a><br>
-	<a href="#">전체 회원 조회</a><br>
+	<a href="/member/listAll">전체 회원 조회</a><br>
 	<a href="#">파일 업로드</a><br>
 	<a href="#">파일 목록 조회</a><br>
 	<a href="#">NOTICE</a>

@@ -30,7 +30,7 @@ public class JDBCTemplate {
 	}
 	
 	//연결생성
-	
+	//createConnection()을 처리하는 곳에서 sql 쿼리를 수행할거야
 	public Connection createConnection() throws SQLException {
 		String url = "jdbc:oracle:thin:@localhost:1521:XE";
 		String user = "KHHUMAN";

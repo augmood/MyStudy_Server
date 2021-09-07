@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import common.JDBCTemplate;
 import model.model.vo.Student;
@@ -143,25 +145,60 @@ public class StudentDAO { //studentservice의 메소드
 		String query = "UPDATE STUDENT SET STUDENT_PW = ? , STUDENT_EMAIL = ? , "
 				+ "STUDENT_PHONE = ? , STUDENT_ADDRESS = ? , STUDENT_HOBBY = ?  WHERE STUDENT_ID = ?";
 		// 쿼리문 실행
-		pstmt = conn.prepareStatement(query);
-		pstmt.setString(1, studentId);
-		result = pstmt.executeUpdate();
-		
-		if(rset.next()) {
-			pstmt.setStudentId(1, getString("STUDENT_ID"));
-			student.setStudentPw(rset.getString("STUDENT_PW"));
-			student.setStudentName(rset.getString("STUDENT_NAME"));
-			student.setStudentGender(rset.getString("STUDENT_GENDER"));
-			student.setStudentAge(rset.getInt("STUDENT_AGE"));
-			student.setStudentEmail(rset.getString("STUDENT_EMAIL"));
-			student.setStudentPhone(rset.getString("STUDENT_PHONE"));
-			student.setStudentAddress(rset.getString("STUDENT_ADDRESS"));
-			student.setStudentHobby(rset.getString("STUDENT_HOBBY"));
-			student.setEnrollDate(rset.getDate("ENROLL_DATE"));
-			
+		try {
+			pstmt = conn.prepareStatement(query);
+			// (x 부분을 모르겠어서 진행을 못 했음)
+			pstmt.setString(1, student.getStudentPw());
+			pstmt.setString(2, student.getStudentEmail());
+			pstmt.setString(3, student.getStudentPhone());
+			pstmt.setString(4, student.getStudentAddress());
+			pstmt.setString(5, student.getStudentHobby());
+			pstmt.setString(6, student.getStudentId());
+			// 쿼리문 실행
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(conn);
 		}
+	
 		// 자원 해제 
 		return result;
+	}
+
+	public List<Student> selectAllList(Connection conn) {
+		Statement stmt = null;
+		ResultSet rset = null;
+		List<Student> sList = null;
+		String query = "SELECT * FROM STUDENT";
+		
+		try {
+			stmt = conn.createStatement();
+			rset = stmt.executeQuery(query);
+			sList = new ArrayList<Student>();
+			while(rset.next()) {
+				Student student = new Student();
+				student.setStudentId(rset.getString("STUDENT_ID"));
+				student.setStudentPw(rset.getString("STUDENT_PW"));
+				student.setStudentName(rset.getString("STUDENT_NAME"));
+				student.setStudentGender(rset.getString("STUDENT_GENDER"));
+				student.setStudentAge(rset.getInt("STUDENT_AGE"));
+				student.setStudentEmail(rset.getString("STUDENT_EMAIL"));
+				student.setStudentPhone(rset.getString("STUDENT_PHONE"));
+				student.setStudentHobby(rset.getString("STUDENT_HOBBY"));
+				student.setEnrollDate(rset.getDate("ENROLL_DATE"));
+				// 최종적으로 저장
+				sList.add(student);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(rset);
+			JDBCTemplate.close(stmt);
+		}
+		return null;
 	}
 		
 }

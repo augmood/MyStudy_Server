@@ -41,6 +41,19 @@ public class Student {
 		this.studentAddress = studentAddress;
 		this.studentHobby = studentHobby;
 	}
+	
+	
+	// 수정용
+	public Student(String studentId, String studentPw, String studentEmail, String studentPhone, String studentAddress,
+			String studentHobby) {
+		super();
+		this.studentId = studentId;
+		this.studentPw = studentPw;
+		this.studentEmail = studentEmail;
+		this.studentPhone = studentPhone;
+		this.studentAddress = studentAddress;
+		this.studentHobby = studentHobby;
+	}
 
 	public void setStudentId(String studentId) {
 		this.studentId = studentId;

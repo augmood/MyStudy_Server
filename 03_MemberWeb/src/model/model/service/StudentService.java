@@ -2,6 +2,7 @@ package model.model.service;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 import common.JDBCTemplate;
 import model.model.dao.StudentDAO;
@@ -97,6 +98,7 @@ public class StudentService {
 		Connection conn = null;
 		// 연결
 		try {
+			// 연결 생성하고 
 			conn = jdbcTemplate.createConnection();
 			result = new StudentDAO().updateMember(conn, student);
 			// 커밋 여부 출력
@@ -108,9 +110,29 @@ public class StudentService {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			// 연결을 닫아주기
+			JDBCTemplate.close(conn);
 		}
 		
 		return result;
+	}
+
+	public List<Student> printAllList() {
+		Connection conn = null;
+		List<Student> sList = null;
+		
+		try {
+			conn = jdbcTemplate.createConnection();
+			sList = new StudentDAO().selectAllList(conn);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(conn);
+		}
+		
+		return null;
 	}
 
 }
