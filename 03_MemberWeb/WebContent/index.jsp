@@ -36,7 +36,7 @@
 	<a href="/member/listAll">전체 회원 조회</a><br>
 	<a href="#">파일 업로드</a><br>
 	<a href="#">파일 목록 조회</a><br>
-	<a href="#">NOTICE</a>
+	<a href="/notice/list">NOTICE</a>
 	<% } %>
 </body>
 </html>
