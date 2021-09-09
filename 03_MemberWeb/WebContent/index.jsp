@@ -34,8 +34,8 @@
 	<!-- localhost:1989/member/myinfo?student-id=ahn1234 (주소창에 이렇게 뜬다) -->
 	<a href="/member/myinfo?studentId=<%= studentId %>">My info</a><br>
 	<a href="/member/listAll">전체 회원 조회</a><br>
-	<a href="#">파일 업로드</a><br>
-	<a href="#">파일 목록 조회</a><br>
+	<a href="/file/upload">파일 업로드</a><br>
+	<a href="file/list">파일 목록 조회</a><br>
 	<a href="/notice/list">NOTICE</a>
 	<% } %>
 </body>

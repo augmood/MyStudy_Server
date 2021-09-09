@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import notice.model.server.NoticeService;
+import notice.model.service.NoticeService;
 import notice.model.vo.Notice;
 
 /**

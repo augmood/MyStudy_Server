@@ -2,16 +2,15 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%
-	List<Notice> nList = (List<Notice>)request.getAttribute("nList");
-	String pageNavi = (String)request.getAttribute("pageNavi");
-%>
+ <%
+ 	List<Notice> nList = (List<Notice>)request.getAttribute("nList");
+ 	String pageNavi  = (String)request.getAttribute("pageNavi");
+ %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>공지사항 조회</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<h1>공지사항</h1>
@@ -47,7 +46,7 @@
 		<tr>
 			<!-- 페이징 처리 -->
 			<td colspan="4" align="center">
-				<%= pageNavi %>
+					 <%= pageNavi %>  
 <!-- 				<a href="#">[이전]</a> -->
 <!-- 				<a href="/notice/list?currentPage=1">1</a>  -->
 <!-- 				<a href="/notice/list?currentPage=2">2</a> -->

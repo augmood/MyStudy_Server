@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import notice.model.server.NoticeService;
+import notice.model.service.NoticeService;
 
 /**
  * Servlet implementation class NoticeRemoveServlet
@@ -28,14 +28,15 @@ public class NoticeRemoveServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("UTF-8");
 		int noticeNo = Integer.parseInt(request.getParameter("noticeNo"));
 		int result = new NoticeService().removeNotice(noticeNo);
 		if(result > 0) {
+			// 성공하면 게시글 리스트로 이동
 			response.sendRedirect("/notice/list");
-
 		}else {
-			request.getRequestDispatcher("/WEB-INF/views/notice/noticeError.html").forward(request, response);
+			// 실패하면 에러페이지로 이동
+			request.getRequestDispatcher("/WEB-INF/views/notice/noticeError.html")
+			.forward(request, response);
 		}
 	}
 
