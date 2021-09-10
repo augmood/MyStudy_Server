@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>UPLOAD</title>
+</head>
+<body>
+	<h1>File Upload</h1>
+	<!-- enctype="multipart/form-data" 여기 오타 반드시 주의할 것 -->
+	<form action="/file/upload" method="post" enctype="multipart/form-data">
+		파일 지정하기 : <input type="file" name="upFile"><br><br>
+		<input type="submit" value="upload">
+		<input type="reset" value="cancel">
+	</form>
+</body>
+</html>
